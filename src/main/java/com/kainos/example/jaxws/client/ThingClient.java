@@ -17,7 +17,7 @@ public class ThingClient {
 
     private void initialise () {
         try {
-            URL url = new URL(ConfigurationHelper.getConfiguration().getSoapServer().getBaseUrl());
+            URL url = new URL(ConfigurationHelper.getConfiguration().getSoapClient().getBaseUrl());
             QName qname = new QName("http://services.jaxws.example.kainos.com/", "ThingServiceService");
             Service service = Service.create(url, qname);
             thingService = service.getPort(IThingService.class);
@@ -38,5 +38,9 @@ public class ThingClient {
 
     public String getThing(int id) {
         return thingService.getThing(id);
+    }
+
+    public void addThing(String description) {
+        thingService.addThing(description);
     }
 }

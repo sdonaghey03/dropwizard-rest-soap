@@ -44,6 +44,7 @@ public class ExternalApplication extends Application<ExternalConfiguration> {
 
         ThingClient thingClient = ThingClient.getInstance();
 
+        thingClient.addThing("Add this thing");
         String webRequestResponse = thingClient.getThing(0);
         System.out.println("About to print out the thing: ");
         System.out.println("=====================================================================");
