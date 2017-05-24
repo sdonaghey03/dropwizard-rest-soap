@@ -3,7 +3,6 @@ package com.kainos.example;
 import com.kainos.example.health.ApplicationHealthCheck;
 import com.kainos.example.helpers.ConfigurationHelper;
 import com.kainos.example.jaxws.client.ThingClient;
-import com.kainos.example.jaxws.services.IThingService;
 import com.kainos.example.jaxws.services.ThingService;
 import com.kainos.example.resources.ValueCheckerResource;
 import com.kainos.example.services.ValueCheckerService;

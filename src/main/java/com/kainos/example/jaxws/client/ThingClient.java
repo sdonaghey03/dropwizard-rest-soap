@@ -36,11 +36,7 @@ public class ThingClient {
         return instance;
     }
 
-    public IThingService getClientService() {
-        return thingService;
-    }
-
     public String getThing(int id) {
-        return instance.getClientService().getThing(id);
+        return thingService.getThing(id);
     }
 }

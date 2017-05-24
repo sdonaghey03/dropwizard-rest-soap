@@ -2,7 +2,6 @@ package com.kainos.example.resources;
 
 import com.kainos.example.api.RequestObject;
 import com.kainos.example.api.ResponseObject;
-import com.kainos.example.jaxws.client.ThingClient;
 import com.kainos.example.services.IValueCheckerService;
 
 import javax.ws.rs.Consumes;

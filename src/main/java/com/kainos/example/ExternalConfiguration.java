@@ -26,5 +26,4 @@ public class ExternalConfiguration extends Configuration {
     public void setSoapClient(SoapClientConfig soapClient) {
         this.soapClient = soapClient;
     }
-
 }
