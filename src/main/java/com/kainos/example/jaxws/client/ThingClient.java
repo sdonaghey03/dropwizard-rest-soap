@@ -1,6 +1,6 @@
 package com.kainos.example.jaxws.client;
 
-import com.kainos.example.ExternalConfiguration;
+import com.kainos.example.helpers.ConfigurationHelper;
 import com.kainos.example.jaxws.services.IThingService;
 
 import javax.xml.namespace.QName;
@@ -15,12 +15,12 @@ public class ThingClient {
 
     private ThingClient (){}
 
-    private void initialise (ExternalConfiguration configuration){
+    private void initialise () {
         try {
-            URL url = new URL(configuration.getSoapServer().getBaseUrl());
+            URL url = new URL(ConfigurationHelper.getConfiguration().getSoapServer().getBaseUrl());
             QName qname = new QName("http://services.jaxws.example.kainos.com/", "ThingServiceService");
             Service service = Service.create(url, qname);
-            this.thingService = service.getPort(IThingService.class);
+            thingService = service.getPort(IThingService.class);
         }
         catch (MalformedURLException e){
             e.printStackTrace();
@@ -28,15 +28,19 @@ public class ThingClient {
         }
     }
 
-    public static ThingClient getInstance (ExternalConfiguration configuration) {
+    public static ThingClient getInstance () {
         if (instance == null) {
             instance = new ThingClient();
-            instance.initialise(configuration);
+            instance.initialise();
         }
         return instance;
     }
 
-    public IThingService getClientService () {
+    public IThingService getClientService() {
         return thingService;
+    }
+
+    public String getThing(int id) {
+        return instance.getClientService().getThing(id);
     }
 }

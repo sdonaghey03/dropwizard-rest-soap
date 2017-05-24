@@ -1,5 +1,7 @@
 package com.kainos.example.helpers;
 
+import com.kainos.example.ExternalConfiguration;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,25 +9,14 @@ import java.util.Properties;
 
 public class ConfigurationHelper {
 
-    public static String getProperty(String propertyName) {
-        Properties prop = new Properties();
-        InputStream input = null;
+    private static ExternalConfiguration configuration;
 
-        try {
-            input = new FileInputStream("config.properties");
-            prop.load(input);
-            return prop.getProperty(propertyName);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return null;
+
+    public static ExternalConfiguration getConfiguration() {
+        return configuration;
+    }
+
+    public static void setConfiguration(ExternalConfiguration configuration) {
+        ConfigurationHelper.configuration = configuration;
     }
 }
