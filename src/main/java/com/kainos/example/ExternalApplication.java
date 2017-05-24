@@ -10,7 +10,6 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import javax.xml.ws.Endpoint;
-import java.net.MalformedURLException;
 
 public class ExternalApplication extends Application<ExternalConfiguration> {
 
@@ -25,7 +24,7 @@ public class ExternalApplication extends Application<ExternalConfiguration> {
 
     @Override
     public void run(ExternalConfiguration configuration,
-                    Environment environment) throws MalformedURLException {
+                    Environment environment){
         ValueCheckerService claimChecker = new ValueCheckerService();
         final ValueCheckerResource valueCheckerResource = new ValueCheckerResource(claimChecker);
         environment.jersey().register(valueCheckerResource);
@@ -35,8 +34,10 @@ public class ExternalApplication extends Application<ExternalConfiguration> {
 
         Endpoint.publish(configuration.getSoapServer().getBaseUrl(), new ThingService());
 
-        ThingClient thingClient = new ThingClient();
-        IThingService ts = thingClient.getClientService(configuration);
-        ts.getThing(0);
+        ThingClient thingClient = ThingClient.getInstance(configuration);
+        IThingService ts = thingClient.getClientService();
+        if (ts != null) {
+            ts.getThing(0);
+        }
     }
 }
