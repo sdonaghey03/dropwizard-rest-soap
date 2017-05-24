@@ -11,11 +11,8 @@ import io.dropwizard.Application;
 import io.dropwizard.jersey.setup.JerseyEnvironment;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-<<<<<<< HEAD
 import io.dropwizard.views.ViewBundle;
 
-=======
->>>>>>> master
 import javax.xml.ws.Endpoint;
 
 public class ExternalApplication extends Application<ExternalConfiguration> {
