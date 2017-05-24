@@ -5,3 +5,6 @@ server:
 
 soapServer:
   baseUrl: http://localhost:8888/
+
+soapClient:
+  baseUrl: http://localhost:8888/
