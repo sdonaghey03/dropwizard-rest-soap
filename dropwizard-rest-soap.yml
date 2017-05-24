@@ -2,3 +2,9 @@ server:
   applicationConnectors:
       - type: http
         port: 3002
+
+soapServer:
+  baseUrl: http://localhost:8888/
+
+soapClient:
+  baseUrl: http://localhost:8888/
