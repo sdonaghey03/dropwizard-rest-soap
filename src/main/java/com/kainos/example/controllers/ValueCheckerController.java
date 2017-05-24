@@ -1,4 +1,4 @@
-package com.kainos.example.resources;
+package com.kainos.example.controllers;
 
 import com.kainos.example.api.RequestObject;
 import com.kainos.example.api.ResponseObject;
@@ -13,10 +13,10 @@ import javax.ws.rs.core.MediaType;
 @Path("/check-value")
 @Produces({MediaType.APPLICATION_JSON})
 @Consumes({MediaType.APPLICATION_JSON})
-public class ValueCheckerResource {
+public class ValueCheckerController {
     private IValueCheckerService valueCheckerService;
 
-    public ValueCheckerResource(IValueCheckerService valueCheckerService) {
+    public ValueCheckerController(IValueCheckerService valueCheckerService) {
         this.valueCheckerService = valueCheckerService;
     }
 

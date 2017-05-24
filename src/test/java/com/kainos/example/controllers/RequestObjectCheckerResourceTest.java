@@ -1,4 +1,4 @@
-package com.kainos.example.resources;
+package com.kainos.example.controllers;
 
 import com.kainos.example.api.RequestObject;
 import com.kainos.example.api.ResponseObject;
@@ -20,7 +20,7 @@ public class RequestObjectCheckerResourceTest {
 
     @ClassRule
     public static final ResourceTestRule resources = ResourceTestRule.builder()
-            .addResource(new ValueCheckerResource(valueCheckerService))
+            .addResource(new ValueCheckerController(valueCheckerService))
             .build();
 
     @Test

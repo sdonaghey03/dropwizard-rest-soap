@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class RequestObject {
     private double value;
 
-    public RequestObject() {
-
-    }
+    public RequestObject() {}
 
     public RequestObject(double value) {
         this.value = value;
