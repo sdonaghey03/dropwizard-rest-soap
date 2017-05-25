@@ -8,7 +8,7 @@ public class ThingModel {
 
     private static ThingModel instance;
 
-    private static ArrayList<Thing> thingList = new ArrayList<Thing>();
+    private static ArrayList<Thing> thingList = new ArrayList<>();
 
     private int nextThingId = 0;
 
