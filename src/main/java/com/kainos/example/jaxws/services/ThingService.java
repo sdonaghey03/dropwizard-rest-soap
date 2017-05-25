@@ -1,6 +1,5 @@
 package com.kainos.example.jaxws.services;
 
-import com.kainos.example.jaxws.models.Thing;
 import com.kainos.example.models.ThingModel;
 
 import javax.jws.WebService;
