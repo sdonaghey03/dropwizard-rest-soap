@@ -8,6 +8,7 @@ import com.kainos.example.jaxws.services.ThingService;
 import com.kainos.example.controllers.ValueCheckerController;
 import com.kainos.example.services.ValueCheckerService;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.jersey.setup.JerseyEnvironment;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -24,6 +25,8 @@ public class ExternalApplication extends Application<ExternalConfiguration> {
     @Override
     public void initialize(Bootstrap<ExternalConfiguration> bootstrap) {
         bootstrap.addBundle(new ViewBundle());
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/assets/", null, "css"));
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/assets/", null, "js"));
     }
 
     @Override
