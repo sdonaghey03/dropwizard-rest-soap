@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Thing {{thing.id}}</title>
+        <script src="/assets/js/thing.js"></script>
+        <link rel="stylesheet" type="text/css" href="/assets/css/app.css" />
     </head>
     <body>
         <h1>Thing {{thing.id}}</h1>
@@ -8,6 +10,6 @@
             <p>ID: {{thing.id}}</p>
             <p>Description: {{thing.description}}</p>
         </div>
+        <input onclick="submitClick()" class="button" type="submit" value="Save and continue">
     </body>
 </html>
-
